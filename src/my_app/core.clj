@@ -6,8 +6,17 @@
   [& args]
   (println "Its you"))
 
-(defn factorial [n]
-  (if (= n 0)1
-    (* n (factorial (dec n)))
-  )
-)
+(defn fizz-buzz [j]
+    (loop [i j]
+        (do
+           (if (and (= (rem i 3) 0)(= (rem i 5) 0))
+                (print "FizzBuzz")
+                (if (= (rem i 3) 0)
+                     (print "Fizz")
+                     (if (= (rem i 5) 0)
+                        (print "Buzz")
+                     ))
+                 )
+           )
+        (recur (inc i)))
+    )
